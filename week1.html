@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 
 </head>
 <body>
@@ -95,6 +95,346 @@
 
 
     </div>
+
+    <style> 
+        div{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.outer{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+.inner{
+    margin: auto;
+
+}
+
+.block{
+    justify-content: flex-end;
+    display: flex;
+    flex: auto;
+    
+}
+
+.icon{
+    display: none;
+}
+
+.item{
+    margin-right: 10px;
+}
+
+.big{
+    height: 250px;
+    width: 100%;
+    background-color: rgb(218, 245, 236);
+    text-align: center;
+    font-size: 40px;
+    margin: auto;
+    line-height: 250px;
+}
+
+.picbox{
+    display: grid;
+    margin: auto;
+    width: 1200px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 250px 250px;
+    gap: 20px;
+}
+
+.label1{
+    display: flex;
+    grid-area: 1/1/2/3;
+    background-color: rgb(237, 219, 255); 
+    overflow: hidden;
+    justify-content:left;
+    line-height: 50px;
+}
+
+.label2{
+    display: flex;
+    grid-area: 1/3/2/5;
+    background-color: rgb(237, 219, 255); 
+    overflow: hidden;
+    justify-content:left;
+    line-height: 50px;
+}
+.label3{
+    display: flex;
+    grid-area: 1/5/2/7;
+    background-color: rgb(237, 219, 255); 
+    overflow: hidden;
+    justify-content:left;
+    line-height: 50px;
+}
+
+.pic1{
+    grid-area: 2/1/3/2;
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;
+}
+
+    
+
+.pic2{
+    grid-area: 2/2/3/3;
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.pic3{
+    grid-area: 2/3/3/4;
+    
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;    
+}
+
+.pic4{
+    grid-area: 2/4/3/5;
+    
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;    
+}
+
+.pic5{
+    grid-area: 2/5/3/6;
+    
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;    
+}
+
+.pic6{
+    grid-area: 2/6/3/7;
+    
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;    
+}
+.pic7{
+    grid-area: 3/1/4/2;
+
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;    
+}
+.pic8{
+    grid-area: 3/2/4/3;
+    
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;    
+}
+
+.pic9{
+    grid-area: 3/3/4/4;
+    
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;    
+}
+
+.pic10{
+    grid-area: 3/4/4/5;
+    
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;    
+}
+
+.pic11{
+    grid-area: 3/5/4/6;
+    
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;    
+}
+
+.pic12{
+    grid-area: 3/6/4/7;
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.bigpic{
+    max-height: 100%;  
+    max-width: 100%; 
+    margin-top: -30px;
+}
+.text{
+    text-align: center;
+}
+.smallpic{
+    /* max-height: ;   */
+    max-width: 80px;
+}
+
+@media (max-width:1200px) {
+    .picbox{
+        width: 90%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 50px 1fr 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .label1{
+        display: flex;
+        grid-area: 1/1/2/3;
+
+    }
+
+    .label2{
+        display: flex;
+        grid-area: 1/3/2/5;
+
+    }
+    .label3{
+        display: flex;
+        grid-area: 2/1/3/5;
+
+    }
+
+    .pic1{
+        grid-area: 3/1/4/2;
+
+    }
+   
+    .pic2{
+        grid-area: 3/2/4/3;
+
+    }
+
+    .pic3{
+        grid-area: 3/3/4/4;
+    
+    }
+
+    .pic4{
+        grid-area: 3/4/4/5;
+
+    }
+
+    .pic5{
+        grid-area: 4/1/5/2;
+    
+    }
+
+    .pic6{
+        grid-area: 4/2/5/3;
+    
+    }
+    .pic7{
+        grid-area: 4/3/5/4;
+    
+    }
+    .pic8{
+        grid-area: 4/4/5/5;
+    
+    }
+
+    .pic9{
+        grid-area: 5/1/6/2;
+    
+    }
+
+    .pic10{
+        grid-area: 5/2/6/3;
+    
+    }
+
+    .pic11{
+        grid-area: 5/3/6/4;
+    
+    }
+
+    .pic12{
+        grid-area: 5/4/6/5;
+        
+    }
+    
+}
+
+
+@media (max-width:600px){
+    .picbox{
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 90%;
+
+    }
+    .label1{
+        display: flex;
+        width: 100%;
+        height: 50px;
+
+    }
+
+    .label2{
+        display: flex;
+        width: 100%;
+        height: 50px;
+
+    }
+    .label3{
+        display: flex;
+        width: 100%;
+        height: 50px;
+
+    }
+    .block{
+        display: none;
+    }
+    .icon{
+        display: block;
+        justify-content: flex-end;
+        flex: auto;
+        text-align: right;
+    }
+    
+}
+
+
+    </style>
 
 
 </body>
