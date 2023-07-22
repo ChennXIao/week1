@@ -10,7 +10,7 @@ class PTT():
         self.html_parsed = ''
 
     def get_html(self,url):
-        url = urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36 Edg/114.0.1823.82"})
+        url = urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"})
         data = urllib.request.urlopen(url)
         html = data.read().decode("utf-8")
         self.html_parsed = BeautifulSoup(html, "html.parser")
@@ -46,32 +46,42 @@ class PTT():
                 site = "https://www.ptt.cc/" + txt
                 html3 = self.get_html(site)
                 time = html3.find_all("span", class_="article-meta-value")
-                Time = time[3].getText()
+                try:
+                    Time = time[3].getText()
+                except IndexError as e:
+                    pass
                 self.TimeList.append(Time)
             except AttributeError:
                 self.TimeList.append("0")
 
-    def wirte_In(self):
+    def wirte_csv(self):
         with open('movie.csv', 'w',encoding='utf-8',newline='') as csv_f:
          writer = csv.writer(csv_f)
          for i in range(len(self.TimeList)):
              writer.writerow([self.TitleList[i],self.LikeList[i],self.TimeList[i]])
-            
-page_to_scrape = input("How many pages do you want? :")
+    
+    def create_txt(self):
+        with open('movie.txt', 'w',encoding='utf-8',newline='') as f:
+            for i in range(len(self.TimeList)):
+                f.write(self.TitleList[i]+",")
+                f.write(str(self.LikeList[i])+",")
+                f.write(self.TimeList[i]+"\n")
+
+# page_to_scrape = input("How many pages do you want? :")
 
 P = PTT()
-for i in range(int(page_to_scrape)):
+for i in range(3):
     if i == 0:
         first_page = P.get_html("https://www.ptt.cc//bbs/movie/index.html")
         next = P.page()
         P.get_info()
-        P.wirte_In()
+        P.create_txt()
         
     else:
         next_page = P.get_html(next)
         next = P.page()
         P.get_info()
-        P.wirte_In()
+        P.create_txt()
         
 
 
