@@ -29,22 +29,22 @@
 
     <div class="big">Welcome to Myhome</div>
     <br>
-    <div id="picbox">
+    <div id="picbox1">
         <div id="label1">
-            <!-- <img class="smallpic" src="https://media.wonderlandmagazine.com/uploads/2023/05/BLEU-DE-CHANEL-Announcement-Visual.jpeg" >
-            <div>Promotion1</div> -->
+
         </div>
         <div id="label2">
-            <!-- <img class="smallpic" src="https://media.wonderlandmagazine.com/uploads/2023/05/BLEU-DE-CHANEL-Announcement-Visual.jpeg" > -->
-            <!-- <div>Promotion2</div> -->
+
         </div>
         <div id="label3">
-            <!-- <img class="smallpic" src="https://media.wonderlandmagazine.com/uploads/2023/05/BLEU-DE-CHANEL-Announcement-Visual.jpeg" >
-            <div>Promotion3</div> -->
-        </div>
 
+        </div>
     </div>
-    <script src="scrape.js" async="async" defer=""></script>
+    
+    <div id="picbox2">
+    </div>
+
+    <script src="second.js" async="async" defer=""></script>
  <style>
     
 *{
@@ -124,13 +124,24 @@ font-size: 2rem;
 line-height: 250px;
 }
 
-#picbox{
+#picbox1{
+display: grid;
+margin: auto;
+margin-top: 20px;
+width: 1200px;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows: 50px;
+gap: 20px;
+}
+
+#picbox2{
 display: grid;
 margin: auto;
 width: 1200px;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-grid-template-rows: 50px 250px 250px;
+grid-template-rows: 250px 250px;
 gap: 20px;
+margin-top: 20px;
 }
 
 #label1{
@@ -159,187 +170,18 @@ overflow: hidden;
 justify-content:left;
 line-height: 50px;
 }
-#pic1{
-grid-area: 2/1/3/2;
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;
-position: relative;
-}
-
-#pic2{
-grid-area: 2/2/3/3;
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;
-position: relative;
-
-}
 
 
-
-
-#pic3{
-grid-area: 2/3/3/4;
-
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;    
-}
-
-#pic4{
-grid-area: 2/4/3/5;
-
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;    
-}
-
-#pic5{
-grid-area: 2/5/3/6;
-
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;    
-}
-
-#pic6{
-grid-area: 2/6/3/7;
-
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;    
-}
-#pic7{
-grid-area: 3/1/4/2;
-
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;    
-}
-#pic8{
-grid-area: 3/2/4/3;
-
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;    
-}
-
-#pic9{
-grid-area: 3/3/4/4;
-
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;    
-}
-
-#pic10{
-grid-area: 3/4/4/5;
-
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;    
-}
-
-#pic11{
-grid-area: 3/5/4/6;
-
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;    
-}
-
-#pic12{
-grid-area: 3/6/4/7;
-background-color: bisque;
-display: flex;
-overflow: hidden;
-flex-direction: column;
-text-align: center;
-}
-#pic1 img{
-    width: 100%;
-    height:100%;
-}
-#pic2 img{
-    width: 100%;
-    height:100%;
-}
-#pic3 img{
-    width: 100%;
-    height:100%;
-}
-#pic4 img{
-    width: 100%;
-    height:100%;
-}
-#pic5 img{
-    width: 100%;
-    height:100%;
-}
-#pic6 img{
-    width: 100%;
-    height:100%;
-}
-#pic7 img{
-    width: 100%;
-    height:100%;
-}
-#pic8 img{
-    width: 100%;
-    height:100%;
-}
-#pic9 img{
-    width: 100%;
-    height:100%;
-}
-#pic10 img{
-    width: 100%;
-    height:100%;
-}
-#pic11 img{
-    width: 100%;
-    height:100%;
-}
-#pic12 img{
-    width: 100%;
-    height:100%;
-}
-
-
-
-.bigpic{
+/* .bigpic{
 max-height: 100%;  
 max-width: 100%; 
 margin-top: -30px;
-}
+} */
 .text{
 text-align: center;
 }
 .smallpic{
-/* max-height: ;   */
+
 width: 80px;
 height: auto;
 display: block;
@@ -349,10 +191,17 @@ object-fit: cover
 
 
 @media (max-width:1200px) {
-#picbox{
+#picbox1{
 width: 90%;
 grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 50px 50px 1fr 1fr 1fr;
+grid-template-rows: 50px 50px;
+gap: 20px;
+}
+
+#picbox2{
+width: 90%;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr;
 gap: 20px;
 }
 
@@ -371,79 +220,28 @@ grid-area: 1/3/2/5;
 display: flex;
 grid-area: 2/1/3/5;
 }
-#pic1{
-grid-area: 3/1/4/2;
-
-}
-
-#pic2{
-grid-area: 3/2/4/3;
-
-}
-
-#pic3{
-grid-area: 3/3/4/4;
-
-}
-
-#pic4{
-grid-area: 3/4/4/5;
-
-}
-
-#pic5{
-grid-area: 4/1/5/2;
-
-}
-
-#pic6{
-grid-area: 4/2/5/3;
-
-}
-#pic7{
-grid-area: 4/3/5/4;
-
-}
-#pic8{
-grid-area: 4/4/5/5;
-
-}
-
-#pic9{
-grid-area: 5/1/6/2;
-
-}
-
-#pic10{
-grid-area: 5/2/6/3;
-
-}
-
-#pic11{
-grid-area: 5/3/6/4;
-
-}
-
-#pic12{
-grid-area: 5/4/6/5;
-
-}
-
-
-
 
 }
 
 /* 小於600px畫面呈現 */
 
 @media (max-width:600px){
-#picbox{
+#picbox1{
 display: flex;
 flex-wrap: wrap;
 margin: auto;
 width: 90%;
-
 }
+
+#picbox2{
+display: flex;
+flex-wrap: wrap;
+margin: auto;
+width: 90%;
+margin-top: 20px;
+}
+
+
 #label1{
 display: flex;
 width: 100%;
@@ -491,11 +289,22 @@ font-size: 5vw;
 
 #box{
     position: relative;
+    height: 250px;
+    background-color: bisque;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center; 
+    flex: auto;
+    
 
 }
 #box img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    overflow: hidden;
     
 }
 .text2{
@@ -523,6 +332,17 @@ font-size: 5vw;
     width: 25px;
     height: 25px;
 
+}
+
+#btn{
+    width: 100px;
+    margin: auto;
+    margin-top: 20px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 5px;
+    border-style: solid;
+    text-align: center;
 }
 
 </style>
