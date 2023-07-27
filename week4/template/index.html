@@ -13,25 +13,26 @@
     <div id="box">
 
         <p>登入系統</p>
-        <form action="/signin", method="post">
+        <form action="/signin" id="btn", method="post">
 
-            <span>帳號</span><input type="text" name="account" id="enter"/>
+            <span>帳號</span><input type="text" name="account" id="enter" required/>
             <br>
-            <span>密碼</span><input type="password" name="password" id="enter"/>
+            <span>密碼</span><input type="password" name="password" id="enter"required/>
             <br>
             <input type="checkbox" name="checked" id="checked" /><span>我同意會員條款</span>
             <br>
-            <button onclick="pop()">登入</button>
+            <button >登入</button>
         </form> 
         <br>
         <div>計算平方數</div>
-        <form action="{{ url_for('cal') }}", method="post">
+        <form id = "forms" method="post">
         
             <span>數字</span><input type="text" placeholder="請填入正整數" name="number" id="count"/>
             <br>
-            <button onclick="notInt()">計算</button>
-    
+            <input type="submit" name="number"/>
+            
         </form> 
+
     </div> 
     
 
