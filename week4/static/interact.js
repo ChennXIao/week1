@@ -1,23 +1,25 @@
-
-function pop(){
+document.getElementById("btn").addEventListener('submit', (e)=>{
     var q = document.getElementById("checked")
-    console.log(q.checked)
     if(!q.checked){
-        alert("請勾選同意條款")
+        alert("請同意會員條款");
+        e.preventDefault();
+        return false;
     }else{
         //pass
     }
 }
+)
 
-function notInt(){
-    var a = document.getElementById("count").value
-    a = Number(a);
-    if(Number.isInteger(a) == false){
+document.getElementById("forms").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    var number = document.getElementById("count").value;
+    number = Number(number);
+    if(Number.isInteger(number) == false || number<0){
         alert("請輸入正整數");
     }else{
-        //pass
+        var square_url = '/square/'+ number;
+        window.location.href = square_url;
     }
-    
+});
 
 
-}
