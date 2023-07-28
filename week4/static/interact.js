@@ -2,13 +2,7 @@ document.getElementById("btn").addEventListener('submit', (e)=>{
     let q = document.getElementById("checked")
     let Accout = document.getElementById("account")
     let Password = document.getElementById("password")
-    
-    if(Accout.value=="" || Password.value==""){
-        alert("帳號或密碼不能空白");
-        e.preventDefault();
-    }else{
-        //pass
-    }
+
     if(!q.checked){
         alert("請同意會員條款");
         e.preventDefault();
