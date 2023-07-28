@@ -1,9 +1,17 @@
 document.getElementById("btn").addEventListener('submit', (e)=>{
-    var q = document.getElementById("checked")
+    let q = document.getElementById("checked")
+    let Accout = document.getElementById("account")
+    let Password = document.getElementById("password")
+    
+    if(Accout.value=="" || Password.value==""){
+        alert("帳號或密碼不能空白");
+        e.preventDefault();
+    }else{
+        //pass
+    }
     if(!q.checked){
         alert("請同意會員條款");
         e.preventDefault();
-        return false;
     }else{
         //pass
     }
@@ -12,12 +20,12 @@ document.getElementById("btn").addEventListener('submit', (e)=>{
 
 document.getElementById("forms").addEventListener("submit", function(event) {
     event.preventDefault(); 
-    var number = document.getElementById("count").value;
+    let number = document.getElementById("count").value;
     number = Number(number);
     if(Number.isInteger(number) == false || number<0){
         alert("請輸入正整數");
     }else{
-        var square_url = '/square/'+ number;
+        let square_url = '/square/'+ number;
         window.location.href = square_url;
     }
 });
