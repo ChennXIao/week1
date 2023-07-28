@@ -20,9 +20,11 @@ def index():
 def ver():
     name = request.form.get("account", "")
     password = request.form.get("password", "")
-
-    if name!="test" or password!= "test":
+    if name == "" or password == "":
+        return redirect("/error?message=帳號或密碼不能空白")
+    elif name!="test" or password!= "test":
         return redirect("/error?message=請輸入正確的帳號密碼")
+
     else:
         session["role"] = name
         return redirect(url_for('member'))
